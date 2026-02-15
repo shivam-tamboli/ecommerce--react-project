@@ -1,3 +1,13 @@
 export default function Home() {
-    return <div>Home Page</div>
+    return (
+        <div className="page">
+            <div className="home-hero">
+                <h1 className="home-hero-title">Welcome to ShopHub</h1>
+                <p className="hame-subtitle">Discover amazing products at great </p>
+            </div>
+            <div className="container">
+                <h2 className="page-title">Our Products</h2>
+            </div>
+        </div>
+    );
 }
