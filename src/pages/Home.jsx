@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import { getProducts } from "../data/products";
+import ProductCard from "../components/ProductCard";
+
 
 export default function Home() {
     const products = getProducts();
@@ -10,14 +13,9 @@ export default function Home() {
             </div>
             <div className="container">
                 <h2 className="page-title">Our Products</h2>
-                <div className="products-grid">
+                <div className="product-grid">
             {products.map((product) => (
-                <div className="product-card" key={product.id}>
-                    
-                    <img src={product.image} className="product-card-image"/>
-                    <div className="product-card-content">
-                </div>
-                </div>
+               <ProductCard product={{product}} />
             ))}
                 </div>   
             </div>
