@@ -1,9 +1,6 @@
 # ShopHub - Ecommerce React Application
 
-## 📋 Project Overview
-
-ShopHub is a modern e-commerce application built with React that allows users to browse products, authenticate, manage a shopping cart, and checkout. The project demonstrates React best practices including context API for state management, React Router for navigation, and React Hook Form for form validation.
-
+A modern e-commerce web application built with React, Vite, and React Router.
 
 ## Features
 
@@ -22,7 +19,7 @@ ShopHub is a modern e-commerce application built with React that allows users to
 - **React Hook Form** - Form handling
 - **localStorage** - Data persistence
 
-## 🏗️ Project Architecture
+## Project Structure
 
 ```
 src/
@@ -44,29 +41,42 @@ src/
 └── index.css             # Global styles
 ```
 
-## 🚀Getting Started
+## Getting Started
 
-# Installation
+### Prerequisites
 
-# Clone the repository
-git clone <repo-url>
+- Node.js (v18 or higher)
+- npm
 
-# Navigate to project
-cd Ecommerce_React
+### Installation
 
+```bash
 # Install dependencies
 npm install
+```
 
+### Development
+
+```bash
 # Start development server
-npm start
+npm run dev
+```
 
-## Available Scripts
+The app will be available at `http://localhost:5173`
 
-npm start          # Run development server
-npm run build      # Build for production
-npm run preview    # Preview production build
+### Build for Production
 
+```bash
+npm run build
+```
 
+The production build will be created in the `dist` folder.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
 
 ## Usage
 
@@ -96,48 +106,37 @@ npm run preview    # Preview production build
 - `getCartItemsWithProducts()` - Get cart items with full product data
 - `clearCart()` - Empty the cart
 
-## 🔄 Data Flow
+## Data Flow
 
-## Authentication Flow
+### Authentication Flow
 
-User inputs credentials
-          ↓
-Auth.jsx form submission
-          ↓
-useAuth() hook calls signUp/login
-          ↓
-AuthContext updates user state
-          ↓
-localStorage saves user email
-          ↓
-User redirected to home page
-          ↓
-Navbar displays user email & logout button
+1. User inputs credentials in Auth.jsx form
+2. useAuth() hook calls signUp/login
+3. AuthContext updates user state
+4. localStorage saves user email
+5. User redirected to home page
+6. Navbar displays user email & logout button
 
 
+### Cart Flow
 
-## Cart Flow
+1. User clicks "Add to Cart" on ProductCard
+2. useCart() hook calls addToCart()
+3. CartContext updates cartItems state
+4. Cart count updates in Navbar
+5. User can view/edit cart on Checkout page
+6. User places order & cart clears
 
-User clicks "Add to Cart" on ProductCard
-          ↓
-useCart() hook calls addToCart()
-          ↓
-CartContext updates cartItems state
-          ↓
-Cart count updates in Navbar
-          ↓
-User can view/edit cart on Checkout page
-          ↓
-User places order & cart clears
+## Known Limitations
 
+- No Backend API - Uses mock data and localStorage only
+- No Password Encryption - Passwords not hashed (use only for development)
+- No Real Authentication - Accepts any email/password combination
+- No Payment Processing - Checkout is UI only
+- No User Database - Data not persistent across devices
+- No Email Verification - No confirmation emails
+- No Order Tracking - No order history
 
-## ⚠️ Known Limitations
+## License
 
-No Backend API - Uses mock data and localStorage only
-No Password Encryption - Passwords not hashed (use only for development)
-No Real Authentication - Accepts any email/password combination
-No Payment Processing - Checkout is UI only
-No User Database - Data not persistent across devices
-No Email Verification - No confirmation emails
-No Order Tracking - No order history
 
